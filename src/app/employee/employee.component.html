@@ -1,0 +1,89 @@
+<div class="container">
+<h3>Angular 2 Forms</h3>
+<form #form='ngForm'>
+    <div class="form-group">
+        <label>First Name</label>
+       <input type="text" class="form-control" placeholder="FirstName" required name="firstName"
+          [(ngModel)]="model.firstName">
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control" placeholder="LastName" required name="lastName"
+          [(ngModel)]="model.lastName">
+    </div>
+
+<div class="form-group">
+  <label>Email:</label>
+  <input type="email" id="email" class="form-control" name="emailAddress" [(ngModel)]="model.emailAddress">
+ </div> 
+  
+  <div class="form-group">
+  <label>ContactNumber:</label>
+  <input type="text" id="contactnumber" class="form-control" name="contactnumber">
+  </div>
+  
+   <div class="form-group">
+  <label>Address:</label>
+  <textarea id="address" name="address" class="form-control" rows="2" cols="30"></textarea>
+   </div>
+  
+   <div class="form-group">
+  <label>UserName:</label>
+  <input type="text" id="userName" class="form-control" name="userName">
+   </div>
+  
+   <div class="form-group">
+  <label>Password:</label>
+  <input type="password" id="pwd" class="form-control" name="userpassword">
+  <input type="hidden" value="hidden" name="Myhiddentext">
+  </div>
+  
+  <label>Gender:</label>
+<div class="radio">  
+  <label><input type="radio" id="male" name="gender" value="male"
+        [(ngModel)]="model.gender">Male</label>
+</div>
+<div class="radio">  
+    <label><input type="radio" id="female" name="gender" value="female" checked
+       [(ngModel)]="model.gender">Female</label>
+</div>
+
+<div class="form-group">
+  <label>Qualification:</label>
+  <select class="form-control" name="qualification" [(ngModel)]="model.qualification">
+  <option *ngFor = "let quali of qualifications">
+     {{quali}}
+  </option>
+  </select>
+  </div>
+  
+  <div class="form-group">
+  <label>Experience:</label>
+  <select class="form-control" name="experience" [(ngModel)]="model.experience">
+  <option *ngFor="let exe of experiences">
+     {{exe}}
+  </option>
+  </select>
+  </div>
+ 
+<div class="checkbox">
+   <label>Coding Language:</label>
+   <div *ngFor="let lang of pref">
+  <input type="checkbox" name="pref" [(ngModel)]="model.pref" (change)="box_check(lang)">
+     {{lang}}
+     </div> 
+     </div>
+  <!--<label><input type="checkbox" name="pref" value="c/c++" [(ngModel)]="model.pref">c/c++</label>
+  <label><input type="checkbox" name="pref" value="java" [(ngModel)]="model.pref">java</label>
+  <label><input type="checkbox" name="pref" value="c#" [(ngModel)]="model.pref">c#</label>
+  <label><input type="checkbox" name="pref" value="php" [(ngModel)]="model.pref">php</label>
+  <label><input type="checkbox" name="pref" value="python" [(ngModel)]="model.pref">python</label>-->
+ 
+  
+<button class="btn btn-primary" type="submit" (click)="Onclick(model)">Submit</button>
+
+</form>
+Model: {{model | json}}
+<br>
+Angular: {{form.value | json}}
+</div>
