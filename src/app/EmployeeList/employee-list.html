@@ -1,0 +1,43 @@
+<div class="container">
+<h3>Employee-List</h3>
+<div class='table-responsive'>
+<table class='table'>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Qualification</th>
+            <th>Experience</th>
+            <th>Code Language</th>
+        </tr>
+        
+        <!--<tr>
+            <td>{{model.firstName}}</td>
+            <td>{{model.lastName}}</td>
+            <td>{{model.emailAddress}}</td>
+            <td>{{model.gender}}</td>
+            <td>{{model.qualification}}</td>
+            <td>{{model.experience}}</td>
+            <td>{{model.pref}}</td>     
+      </tr> -->
+      <tbody>
+          <tr *ngFor="let emp of model; let i=index">
+              <td>{{emp.firstName}}</td>
+            <td>{{emp.lastName}}</td>
+            <td>{{emp.emailAddress}}</td>
+            <td>{{emp.gender}}</td>
+            <td>{{emp.qualification}}</td>
+            <td>{{emp.experience}}</td>
+            <td>{{emp.pref}}</td> 
+            <td>
+                <a class="btn btn-success">Edit</a>
+                 <a class="btn btn-success" (click)="deleteEmployee(i)">Delete</a>   
+            </td>
+            </tr>
+    </tbody>
+      
+</table>
+<button type="button"  [routerLink]="['/Home']"> Add</button> 
+</div>
+</div>

@@ -1,3 +1,4 @@
+
 <div class="container">
 <h3>Angular 2 Forms</h3>
 <form #form='ngForm'>
@@ -69,10 +70,10 @@
 <div class="checkbox">
    <label>Coding Language:</label>
    <div *ngFor="let lang of pref">
-  <input type="checkbox" name="pref" [(ngModel)]="model.pref" (change)="box_check(lang)">
+   <input type="checkbox" name="pref" [(ngModel)]="model.pref" (change)="box_check(lang)">
      {{lang}}
-     </div> 
-     </div>
+    </div> 
+</div>
   <!--<label><input type="checkbox" name="pref" value="c/c++" [(ngModel)]="model.pref">c/c++</label>
   <label><input type="checkbox" name="pref" value="java" [(ngModel)]="model.pref">java</label>
   <label><input type="checkbox" name="pref" value="c#" [(ngModel)]="model.pref">c#</label>
@@ -80,7 +81,7 @@
   <label><input type="checkbox" name="pref" value="python" [(ngModel)]="model.pref">python</label>-->
  
   
-<button class="btn btn-primary" type="submit" (click)="Onclick(model)">Submit</button>
+<button class="btn btn-primary" type="submit" (click)="Onclick(model)" (click)="addEmployee" [routerLink]="['/List']">Submit</button>
 
 </form>
 Model: {{model | json}}
